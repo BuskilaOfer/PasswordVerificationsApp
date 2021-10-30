@@ -14,6 +14,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
+
+  constructor(private http: HttpClient) { }
+
   get password() {
     return this.signup.get('password');
   }
@@ -49,12 +52,17 @@ export class FormComponent {
     
       console.log(this.signup)
 
-      
-      // this.http.post('http://localhost:4000/api/create-user', formData).subscribe(
-      //   (response) => console.log(response),
-      //   (error) => console.log(error)
-      // )
-    
+      var formData: any = new FormData();
+      formData.append("name", this.signup.get('email').value);
+      formData.append("avatar", this.signup.get('password').value);
+      const headers = new Headers();
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'text/plain');
+      const httpOptions = {headers: headers};
+      this.http.post('http://localhost:9090/addUser',httpOptions, formData).subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      )    
   }
 
   hesRegularLetter(): ValidatorFn {

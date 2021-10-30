@@ -1,0 +1,7 @@
+{
+  "timestamp": "2021-10-30T16:03:53.433+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "",
+  "path": "/api/addUser"
+}

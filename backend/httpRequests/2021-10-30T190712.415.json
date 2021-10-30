@@ -1,0 +1,7 @@
+{
+  "timestamp": "2021-10-30T16:07:12.589+00:00",
+  "status": 415,
+  "error": "Unsupported Media Type",
+  "message": "",
+  "path": "/api/addUser"
+}
