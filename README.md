@@ -23,7 +23,7 @@ I have included an in-memory database for the application. Database schema and s
 <br/>
 
 
-### Build Frontend (optional step)
+### Build Frontend 
 Code for frontend is allready compiled and saved under the ```webui/dist``` 
 when building the backend app (using maven) it will pickup the code from ```webui/dist```. However if you modified the frontend code and want your changes to get reflected then you must build the frontend 
 ```bash
@@ -35,13 +35,8 @@ ng build --prod --aot=true
 
 ### Build Backend (SpringBoot Java)
 ```bash
-# Maven Build : Navigate to the root folder where pom.xml is present 
+# Maven Build : Navigate to the backend folder where pom.xml is present 
 mvn clean install
-
-#OR
-
-# Gradle Build : Navigate to the root folder where build.gradle is present 
-gradle build
 ```
 
 ### Start the API and WebUI server
