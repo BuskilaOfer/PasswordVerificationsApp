@@ -42,27 +42,28 @@ export class FormComponent {
     email: new FormControl('', [
       Validators.required,
       this.isValidEmail()
-      ]
-      ),
+    ]
+    ),
   });
 
   onSubmit() {
-    console.log(this.signup.value);
-    this.signup.reset();
-    
-      console.log(this.signup)
 
-      var formData: any = new FormData();
-      formData.append("name", this.signup.get('email').value);
-      formData.append("avatar", this.signup.get('password').value);
-      const headers = new Headers();
-      headers.append('Content-Type', 'multipart/form-data');
-      headers.append('Accept', 'text/plain');
-      const httpOptions = {headers: headers};
-      this.http.post('http://localhost:9090/addUser',httpOptions, formData).subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      )    
+    const email = this.signup.get('email').value;
+    const password = this.signup.get('password').value;
+
+    const reqData = {
+      'user': email,
+      'password': password
+    };
+
+    this.http.post('http://localhost:9090/addUser', reqData).subscribe(
+      (response) => {
+        console.log(response);
+        // this.signup.reset();
+
+      },
+      (error) => console.log(error)
+    )
   }
 
   hesRegularLetter(): ValidatorFn {
@@ -74,12 +75,12 @@ export class FormComponent {
     };
   }
 
-  
+
   isValidEmail(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {
       if (!control.value) {
         return null;
-      }          
+      }
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(control.value) ? null : { incorrectEmailFormat: true };
     };
   }
@@ -118,7 +119,7 @@ export class FormComponent {
       }
       console.log('confirmPasswordValidator');
       console.log(control.value == this.confirmPassword.value);
-      return control.value == this.confirmPassword.value
+      return control.value === this.confirmPassword.value
         ? null
         : { passwordsArentMatched: true };
     };
