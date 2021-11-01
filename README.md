@@ -58,10 +58,10 @@ java -jar ./build/libs/app-1.0.0.jar
 
 
 ### Screenshots
-#### Login
-![Dashboard](/screenshots/login.png?raw=true)
+#### Empty Form
+![Empty Form](/screenshots/Empty Form.png?raw=true)
 ---
-#### Dashboard - Order Stats
-![Dashboard](/screenshots/order_stats.png?raw=true)
+#### Full Form
+![Empty Form](/screenshots/Full Form.png?raw=true) 
 ---
 
