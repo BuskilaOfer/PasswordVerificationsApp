@@ -33,10 +33,12 @@ mvn clean install
 
 ### Screenshots
 #### Empty Form
-![alt text](/screenshots/Empty Form.png?raw=true)
 ![Dashboard](https://github.com/BuskilaOfer/PasswordVerificationsApp/blob/main/screenshots/Empty%20Form.png?raw=true)
 ---
 #### Full Form
-![Dashboard](/screenshots/Full Form.png?raw=true) 
+![Dashboard](https://github.com/BuskilaOfer/PasswordVerificationsApp/blob/main/screenshots/Full%20Form.png?raw=true)
+---
+#### Form After Success Insert
+![Dashboard](https://github.com/BuskilaOfer/PasswordVerificationsApp/blob/main/screenshots/Form%20After%20Success%20Insert.png?raw=true)
 ---
 
