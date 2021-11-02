@@ -27,6 +27,8 @@ Navigate to http://localhost:4200/
 ```bash
 # Navigate to PROJECT_FOLDER/backend (should contain pom.xml )
 mvn clean install
+
+mvn spring-boot:run
 ```
 
 
