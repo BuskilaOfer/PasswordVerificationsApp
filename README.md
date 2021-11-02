@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# PasswordVerificationsApp
-=======
 ## Password Verifications App - Angular Frontent with SpringBoot (Java) Backend
 
 ## About
@@ -36,10 +33,10 @@ mvn clean install
 
 ### Screenshots
 #### Empty Form
-![Dashboard](/screenshots/Empty Form.png?raw=true)
+![alt text](/screenshots/Empty Form.png?raw=true)
+![Dashboard](https://github.com/BuskilaOfer/PasswordVerificationsApp/blob/main/screenshots/Empty%20Form.png?raw=true)
 ---
 #### Full Form
 ![Dashboard](/screenshots/Full Form.png?raw=true) 
 ---
->>>>>>> 078ff7d1b988d32a76db41696dabd894ece55cc2
 
