@@ -15,6 +15,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormComponent {
 
+  public responseFromServer :string = "";
+  
+
   constructor(private http: HttpClient) { }
 
   get password() {
@@ -26,6 +29,8 @@ export class FormComponent {
   get email() {
     return this.signup.get('email');
   }
+
+
 
   public signup = new FormGroup({
     password: new FormControl('', [
@@ -59,10 +64,13 @@ export class FormComponent {
     this.http.post('http://localhost:9090/addUser', reqData).subscribe(
       (response) => {
         console.log(response);
-        // this.signup.reset();
+        this.responseFromServer =  "User number "+response['id']+" created successfully"    ; 
+        this.signup.reset();
 
       },
-      (error) => console.log(error)
+      (error) => {
+        this.responseFromServer =  "Error from Server: "  + error  ;  
+        console.log(error)}
     )
   }
 
@@ -117,9 +125,8 @@ export class FormComponent {
       if (!control.value) {
         return null;
       }
-      console.log('confirmPasswordValidator');
-      console.log(control.value == this.confirmPassword.value);
-      return control.value === this.confirmPassword.value
+
+      return control.value === this.password.value
         ? null
         : { passwordsArentMatched: true };
     };

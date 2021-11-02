@@ -17,38 +17,37 @@
     </div>
 
 
-    <div id="paragraphs">
-      <p>
-        <label [ngStyle]="{'color': !email.value  ? 'red' : 'green' }">Email is not empty </label>
-        <label [ngStyle]="{'color': signup.controls['email'].hasError('incorrectEmailFormat')|| !email.value ? 'red' : 'green' }">Email is valid
-        </label>
-      </p>
-      <p>
-        <label
-          [ngStyle]="{'color': signup.controls['password'].hasError('missingRegularLetter') || !password.value ? 'red' : 'green' }">Has
-          regular letter </label>
-        <label
-          [ngStyle]="{'color': signup.controls['password'].hasError('missingCapitalLetter') || !password.value ? 'red' : 'green' }">Has
-          Capital letter </label>
-      </p>
-      <p>
-        <!-- <div *ngIf="signup.invalid; else templateName">
-          If isValid is true
+    <div style="display: flex; justify-content: space-around">
+      <div>
+        <p> <label [ngStyle]="{'color': !email.value  ? 'red' : 'green' }">Email is not empty </label><br>
+          <label
+            [ngStyle]="{'color': signup.controls['password'].hasError('missingRegularLetter') || !password.value ? 'red' : 'green' }">Has
+            regular letter </label><br>
+          <label
+            [ngStyle]="{'color': signup.controls['password'].hasError('missingNumber') || !password.value ? 'red' : 'green' }">Number
+          </label>
+        </p>
       </div>
-      
-      <ng-template #templateName>
-          If isValid is false
-      </ng-template> -->
-
-        <label
-          [ngStyle]="{'color': signup.controls['password'].hasError('missingNumber') || !password.value ? 'red' : 'green' }">Number
-        </label>
-        <label
-          [ngStyle]="{'color': signup.controls['password'].hasError('lengthShorterThan6')  || !password.value ? 'red' : 'green' }">At
-          least 6 </label>
-      </p>
-    </div>
-
+      <div>
+        <p>
+          <label
+            [ngStyle]="{'color': signup.controls['email'].hasError('incorrectEmailFormat')|| !email.value ? 'red' : 'green' }">Email
+            is valid
+          </label>
+          <br>
+          <label
+            [ngStyle]="{'color': signup.controls['password'].hasError('missingCapitalLetter') || !password.value ? 'red' : 'green' }">Has
+            Capital letter </label>
+          <br>
+          <label
+            [ngStyle]="{'color': signup.controls['password'].hasError('lengthShorterThan6')  || !password.value ? 'red' : 'green' }">At
+            least 6 </label>
+        </p>
+      </div>
+    </div> 
+        <div style="color: green;" >
+          {{responseFromServer}}
+      </div> <br>   
     <button [disabled]="signup.invalid" type="submit">Submit</button>
   </form>
 </div>
