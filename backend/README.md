@@ -9,6 +9,10 @@ Demonstrates elementary Add operation in response to HTTP as well as returning J
 
 > H2 As Database
 
+## In Memory DB (H2)
+I have included an in-memory database for the application. Database schema and sample data for the app is created everytime the app starts, and gets destroyed after the app stops, so the changes made to to the database are persistent only as long as the app is running
+<br/>
+
 ## Getting Started
 
 ### Clone
